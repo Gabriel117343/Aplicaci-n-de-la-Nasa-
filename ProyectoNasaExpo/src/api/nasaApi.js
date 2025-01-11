@@ -18,7 +18,8 @@ export default function getAllImages({ urlParams = "", keyIngresada }) {
   if (!KEY && !keyIngresada)
     return Promise.reject(new Error("Se espera una API Key de la NASA"));
   console.log('APi Ingresada:', !!keyIngresada);
-  // el operador de coalesencia nula o Nullish coalescing operator (??) se utiliza para verificar si el valor de la variable es nulo o indefinido
-  
-  return nasaAPI.get(`?api_key=${keyIngresada ?? KEY}${urlParams ?? ""}`); // primero se le da importancia a la keyIngresada y luego a la KEY por defecto
+
+  // el operador de coalesencia nula o Nullish ?? se utiliza para verificar si el valor de la variable es nulo o indefinido
+  // primero se le da importancia a la keyIngresada y luego a la KEY por defecto
+  return nasaAPI.get(`?api_key=${keyIngresada ?? KEY}${urlParams ?? ""}`); 
 }

@@ -1,14 +1,17 @@
 import React, { useState, useRef } from "react";
 import { View, StyleSheet, TextInput } from "react-native";
+
 import { Modal, Portal, Button, Text } from "react-native-paper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import ConfettiCannon from "react-native-confetti-cannon";
 import { useRouter } from "expo-router";
+
 import { KeyIcon } from "../components/shared/Icons";
 import useApiKey from '../hooks/useApiKey';
 import { usePing } from '../hooks/usePing'
 import { toast } from 'react-native-toast-lite'
 const ApiKeyModal = ({ visible, onDismiss, closeMenu }) => {
+  
   const [apiKey, setApiKey] = useState("");
   const [isSaving, setIsSaving] = useState(false);
 

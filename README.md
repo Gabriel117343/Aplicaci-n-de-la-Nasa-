@@ -2,6 +2,56 @@
 
 - Este Proyecto es una aplicación móvil desarrollada con React Native y Expo, que muestra imágenes del día obtenidos de la API de la NASA. La aplicación utiza la API de la NASA para obtener datos astrónomicos diarios, incluyendo imágenes y videos, que se presentan a los usuarios de manera atractiva.
 
+### Crear API KEYs
+
+1. Instalar `eas-cli`
+```bash
+npm install -g eas-cli
+```
+**Configuración de las claves API con `eas secret:create`
+2. Crear las claves API como secretos en Expo:
+```bash
+eas secret:create --name NASA_API_KEY --value tu_clave_api_de_nasa
+eas secret:create --name DEEPL_API_KEY --value tu_clave_api_de_deepl
+```
+3. Verificar los secretos creados:
+```bash
+eas secret:list
+```
+**Configuración de `eas.json`
+4. Configurar `eas.json` para usar las variables de entorno:
+```json
+{
+  "build": {
+    "development": {
+      "env": {
+        "NASA_API_KEY": "@env:NASA_API_KEY", // Tú api de la Nasa obtenida
+        "DEEPL_API_KEY": "@env:DEEPL_API_KEY" // Tú api de traducción de deepl (El mejor traductor)
+      }
+    },
+    "production": {
+      "env": {
+        "NASA_API_KEY": "@env:NASA_API_KEY",
+        "DEEPL_API_KEY": "@env:DEEPL_API_KEY"
+      }
+    }
+  }
+}
+```
+
+### Generar APK con EAS Build
+
+1. Asegúrate de tener instalado `eas-cli` globalmente:  
+```bash
+  npm install -g eas-cli
+```
+2. Verifica la configuración de variables de entorno en tu archivo eas.json (por ejemplo "NASA_API_KEY: "@ENV:NASA_API_KEY")
+3. Ejecuta el siguiente comando para compilar la app en modo producción y generar el .apk
+```bash
+eas build --platform android --profile production
+```
+4. Cuando termine el proceso, encontrarás un enlace en la terminal para descargar tu `.apk` de la sección de "Builds" en la cuenta de tu proyecto de Expo.
+
 ### Dependencias
 
 | Paquete                           | Versión    |
@@ -41,7 +91,7 @@
 | react-native-dotenv   | ^3.4.11   |
 | tailwindcss           | 3.3.2     |
 
-> Intefaz
+> Interfáz
 <div style="display: flex; justify-content: space-around; align-items: center; gap: 50px;">
   <img src="https://github.com/user-attachments/assets/160727af-f8b9-4502-a821-ad6ce3fad233" alt="NASA Image 1" width="25%" />
   <img src="https://github.com/user-attachments/assets/69846f02-802f-4114-83ad-42a777a69484" alt="NASA Image 2" width="25%" />
