@@ -8,7 +8,8 @@
 ```bash
 npm install -g eas-cli
 ```
-**Configuración de las claves API con `eas secret:create`
+**Configuración de las claves API con `eas secret:create`**
+
 2. Crear las claves API como secretos en Expo:
 ```bash
 eas secret:create --name NASA_API_KEY --value tu_clave_api_de_nasa
@@ -18,7 +19,8 @@ eas secret:create --name DEEPL_API_KEY --value tu_clave_api_de_deepl
 ```bash
 eas secret:list
 ```
-**Configuración de `eas.json`
+**Configuración de `eas.json`**
+
 4. Configurar `eas.json` para usar las variables de entorno:
 ```json
 {
@@ -49,6 +51,10 @@ eas secret:list
 3. Ejecuta el siguiente comando para compilar la app en modo producción y generar el .apk
 ```bash
 eas build --platform android --profile production
+```
+**En caso de problemas asegurar limpiar la cache con:**
+```bash
+eas build --platform android --profile development --clear-cache
 ```
 4. Cuando termine el proceso, encontrarás un enlace en la terminal para descargar tu `.apk` de la sección de "Builds" en la cuenta de tu proyecto de Expo.
 

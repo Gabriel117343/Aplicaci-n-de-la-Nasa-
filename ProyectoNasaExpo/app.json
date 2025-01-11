@@ -16,8 +16,10 @@
       "supportsTablet": true
     },
     "android": {
+      "newArchEnabled": true,
       "permissions": [
-        "INTERNET"
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
       ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/nasa-logo.png",

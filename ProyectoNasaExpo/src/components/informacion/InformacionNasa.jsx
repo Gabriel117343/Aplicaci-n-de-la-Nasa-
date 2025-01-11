@@ -1,13 +1,14 @@
-import { View, Text, StyleSheet, Image } from "react-native";
-import { Screen } from "../descripcion/Screen";
+import { View, Text, StyleSheet, Image } from 'react-native'
+import { Screen } from '../descripcion/Screen'
 
-export default function InformacionNasa() {
+export default function InformacionNasa () {
+  const nasaImagen = require('../../../assets/nasa-imagen.png')
   return (
     <Screen>
       <View style={{ paddingTop: 20 }}>
         <View style={styles.contenedorImagen}>
           <Image
-            source={require("../../../assets/nasa-imagen.png")}
+            source={nasaImagen}
             style={styles.imagenNasa}
           />
         </View>
@@ -36,21 +37,21 @@ export default function InformacionNasa() {
         </Text>
       </View>
     </Screen>
-  );
+  )
 }
 const styles = StyleSheet.create({
   contenedorImagen: {
-    maxWidth: "100%",
+    maxWidth: '100%',
     height: 200,
     borderWidth: 0.5,
-    borderColor: "white",
+    borderColor: 'white',
     marginBottom: 30,
-    overflow: "hidden",
-    justifyContent: "center",
+    overflow: 'hidden',
+    justifyContent: 'center'
   },
   imagenNasa: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%'
   },
-  text: { color: "white", fontSize: 18, paddingBottom: 10 },
-});
+  text: { color: 'white', fontSize: 18, paddingBottom: 10 }
+})

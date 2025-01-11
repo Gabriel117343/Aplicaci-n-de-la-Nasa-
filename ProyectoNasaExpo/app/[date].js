@@ -9,13 +9,14 @@ export default function Detail() {
 
   return (
     <ScrollView>
-      <View className="bg-white flex-1 items-center justify-center">
+      {/* className="bg-white flex-1 items-center justify-center" */}
+      <View>
         <Stack.Screen
           options={{
             headerShown: false, // Oculta el encabezado
           }}
         />
-        <Descripcion date={date}/>
+        <Descripcion date={date} />
       </View>
     </ScrollView>
   );

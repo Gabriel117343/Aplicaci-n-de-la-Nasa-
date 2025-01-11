@@ -1,9 +1,9 @@
-import React from "react";
-import { View, Pressable, StyleSheet } from "react-native";
-import { HomeIcon } from "../shared/Icons";
+import React from 'react'
+import { View, Pressable, StyleSheet } from 'react-native'
+import { HomeIcon } from '../shared/Icons'
 
-import { BlurView } from "expo-blur";
-import { Link } from "expo-router";
+import { BlurView } from 'expo-blur'
+import { Link } from 'expo-router'
 
 export const Header = () => {
   return (
@@ -23,19 +23,19 @@ export const Header = () => {
         </Link>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "transparent",
-    alignItems: "flex-left",
+    backgroundColor: 'transparent',
+    alignItems: 'flex-left',
     height: 60,
-    justifyContent: "center",
-    minWidth: "100%",
+    justifyContent: 'center',
+    minWidth: '100%'
   },
   left: {
-    paddingLeft: 20,
-  },
-});
+    paddingLeft: 20
+  }
+})

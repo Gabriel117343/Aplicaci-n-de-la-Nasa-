@@ -1,77 +1,34 @@
 {
   "compilerOptions": {
-    /* 
-      TS Target:
-      - "ES2022" para usar características modernas de JS.
-      - "skipLibCheck" mejora tiempos de compilación, ignorando archivos de definición en node_modules.
-    */
     "target": "ES2022",
     "skipLibCheck": true,
-
-    /* 
-      Migrando desde JS:
-      - "allowJs": true permite gradualmente incluir archivos JS.
-      - "noImplicitAny": true evita el uso implícito de 'any'.
-    */
     "allowJs": true,
     "noImplicitAny": true,
-
-    /* 
-      Módulos:
-      - "module": "ESNext" es común en entornos modernos y con bundlers (ej. Metro/Expo).
-      - "moduleResolution": "bundler" facilita la resolución de importaciones.
-    */
     "module": "ESNext",
     "moduleResolution": "bundler",
-
-    /*
-      Interoperabilidad:
-      - "esModuleInterop": true facilita el uso de imports/exports entre CJS y ESModules.
-    */
     "esModuleInterop": true,
-
-    /*
-      Otros ajustes de migración:
-      - "forceConsistentCasingInFileNames": true asegura nombres de archivo consistentes.
-      - "allowImportingTsExtensions": true permite importar archivos .ts directamente.
-      - "resolveJsonModule": true admite import de JSON.
-      - "isolatedModules": true evita problemas de análisis en archivos sueltos.
-    */
     "forceConsistentCasingInFileNames": true,
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-
-    /*
-      Emisión de código:
-      - "noEmit": true evita generar .js (usado normalmente con bundlers).
-      - "noEmitOnError": false permite compilaciones incluso con errores (podrías cambiarlo a true).
-    */
     "noEmit": true,
     "noEmitOnError": false,
-
-    /*
-      JSX:
-      - "jsx": "preserve" evita transformaciones adicionales al usar React Native.
-    */
     "jsx": "preserve",
-
-    /*
-      Reglas de lint:
-      - "strict": true activa todas las comprobaciones estrictas.
-      - "noUnusedLocals/Parameters" ayuda a limpiar el código.
-      - "noFallthroughCasesInSwitch" evita errores lógicos en los case.
-    */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules"],
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
-  ]
+  ],
+  "extends": "expo/tsconfig.base"
 }

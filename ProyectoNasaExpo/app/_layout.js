@@ -14,7 +14,7 @@ export default function Layout() {
   return (
     <PaperProvider>
       <View
-        className="flex-1 justify-center"
+        // className="flex-1 justify-center"
         style={{ marginTop: insets.top, marginBottom: insets.bottom }}
       >
         {/* <StatusBar style="dark" backgroundColor="green" /> */}

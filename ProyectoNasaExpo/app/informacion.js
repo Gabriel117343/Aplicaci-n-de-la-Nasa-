@@ -6,7 +6,7 @@ export default function Informacion() {
   const insets = useSafeAreaInsets(); // margenes seguros del dispositivo
   return (
     <ScrollView>
-      <View className="bg-white flex-1 items-center justify-center">
+      <View>
         <Stack.Screen
           options={{
             headerShown: false, // Oculta el encabezado
